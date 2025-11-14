@@ -1,0 +1,72 @@
+St Paul’s School Canteen Pre-Order System  
+By Ray Qiu — Class 10R  
+Teacher: Mr Fenwick  
+Sprint 4 Final Project Submission
+
+
+##Project Overview
+This project is a fully functional **canteen pre-order system** for St Paul's School.  
+It allows students to browse the menu and place food orders, while kitchen staff can manage menu items, update order statuses, and export order data.
+
+The system is built using:
+- **Python**
+- **Flask**
+- **SQLite**
+- **HTML + CSS**
+- **Jinja2 Templates**
+
+Features
+
+Student Features
+- Register new account  
+- Login securely  
+- View daily menu  
+- See item images and prices  
+- Add items to cart / place orders  
+- View all past and current orders  
+- Track order status (Pending → Ready → Completed)
+
+---
+
+Kitchen Features
+- Login as kitchen staff  
+- Add new menu items  
+- Upload food images  
+- Toggle availability of items  
+- View all orders from students  
+- Update order status  
+- Export all orders to CSV  
+
+Database Models (SQLite)
+
+**User**
+| Field | Type | Description |
+|-------|------|-------------|
+| id | Integer | Primary Key |
+| username | Text | Unique |
+| password | Text | For login (plain for demo only) |
+| role | Text | 'student' or 'kitchen' |
+
+**MenuItem**
+| Field | Type |
+|-------|------|
+| id | Integer |
+| name | Text |
+| price | Float |
+| image | Text |
+| available | Boolean |
+
+**Order**
+| Field | Type |
+|-------|------|
+| id | Integer |
+| student_id | Integer |
+| item_id | Integer |
+| quantity | Integer |
+| price_at_time | Float |
+| status | Text |
+
+How to Run the Project (Important)
+
+Install required modules
+
