@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Today's Menu</h2>
+{% if items %}
+<div class="grid">
+  {% for i in items %}
+  <div class="card">
+    <div class="card-head">
+      <h3>{{ i.name }}</h3>
+      <span class="price">${{ '%.2f'|format(i.price) }}</span>
+    </div>
+    <form method="post" class="order-line">
+      <input type="hidden" name="item_id" value="{{ i.id }}">
+      <label>Qty
+        <input type="number" name="quantity" value="1" min="1">
+      </label>
+      <button class="btn">Add</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty">
+  <h3>Menu Not Available</h3>
+  <p>No menu items available today. Please check back later.</p>
+</div>
+{% endif %}
+{% endblock %}
