@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card max-480">
+  <h2>Login</h2>
+  <form method="post" class="form-grid">
+    <label>Username
+      <input name="username" placeholder="e.g. j.smith">
+    </label>
+    <label>Password
+      <input type="password" name="password" placeholder="••••••••">
+    </label>
+    <button class="btn">Login</button>
+  </form>
+  <p class="muted">Kitchen test: <code>kitchen / kitchen123</code></p>
+</div>
+{% endblock %}

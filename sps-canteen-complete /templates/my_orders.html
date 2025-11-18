@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Orders</h2>
+{% if orders %}
+<div class="table-wrap">
+  <table class="table">
+    <thead><tr><th>Time</th><th>Item</th><th>Qty</th></tr></thead>
+    <tbody>
+    {% for o in orders %}
+      <tr>
+        <td>{{ o.created_at or "" }}</td>
+        <td>{{ o.menu_item.name }}</td>
+        <td>{{ o.quantity }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="empty"><p>No orders yet.</p></div>
+{% endif %}
+{% endblock %}
